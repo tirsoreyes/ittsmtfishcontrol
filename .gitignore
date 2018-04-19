@@ -21,3 +21,11 @@
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 .DS_Store
+.classpath
+.gradle/3.5.1/file-changes/last-build.bin
+.gradle/3.5.1/taskHistory/taskHistory.lock
+.gradle/buildOutputCleanup/built.bin
+.gradle/buildOutputCleanup/cache.properties
+.gradle/buildOutputCleanup/cache.properties.lock
+.project
+.settings/org.eclipse.buildship.core.prefs

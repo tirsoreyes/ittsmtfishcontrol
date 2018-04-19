@@ -1,0 +1,137 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+
+
+
+<head th:fragment="header">
+
+<meta http-equiv="Content-Type" content="text/html" charset="utf-8" />
+<link rel="shortcut icon" href="webjars/img/iconocitat.png" />   
+   <!-- Bootstrap -->
+    
+    <link href="webjars/library/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen"> </link>
+    <link href="webjars/library/font-awesome-4.6.3/css/font-awesome.min.css" rel="stylesheet" media="screen"> </link>
+    
+    <link href="webjars/css/general.css" rel="stylesheet" media="screen"> </link> 
+    <link href="webjars/css/headstyle.css" rel="stylesheet" media="screen"/> 
+    <link rel="icon" href="webjars/img/iconocitat.png"/>
+   
+   
+</head>
+
+
+
+<body>
+<!--
+	<div th:fragment="header">
+
+ 
+		<div th:replace="fragments/modals/modals :: modales" />
+	
+
+
+		<nav class="navbar navbar-inverse  navbar-fixed-top">
+			<div class="container">
+
+
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed"
+						data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+						aria-controls="navbar">
+						<span class="sr-only">Toggle navigation</span> <span
+							class="icon-bar"></span> <span class="icon-bar"></span> <span
+							class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="#"> <img
+						src="webjars/img/citatesquina.png" /></a>
+
+
+				</div>
+
+				<div id="navbar" class="navbar-collapse collapse">
+
+					<form id="logout-form" class="navbar-form navbar-right">
+						<button type="submit" id="btnIngresar" class="btn btn-info">Salir</button>
+					</form>
+				</div>
+
+			</div>
+		</nav>
+
+
+
+		<div class="fondoMenu">
+			<div class="botonesMenu">
+
+				<div class="btn-group">
+					<button type="button" class="btn btn-info dropdown-toggle  btn-outline-primary"
+						data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						Empresa</button>
+					<div class="dropdown-menu">
+					<a class="btn btn-info anchoheaderhref" href="/empresa/Agregar">Agrega</a>
+						<a class="btn btn-info anchoheaderhref" data-toggle="collapse" href="/empresa/Agregar" role="button" aria-expanded="false" aria-controls="collapseExample">Agregar Empresa  </a> <br></br>
+						<a class="btn btn-info anchoheaderhref" data-toggle="collapse" href="/empresa/Editar" role="button" aria-expanded="false" aria-controls="collapseExample">Editar mi Empresa</a> <br></br>	 
+						<a class="btn btn-info anchoheaderhref" data-toggle="collapse" href="/empresa/Baja" role="button" aria-expanded="false" aria-controls="collapseExample">Baja de Empresa  </a> <br></br>	 
+					</div>
+				</div>
+
+				<div class="btn-group">
+					<button type="button" class="btn btn-info dropdown-toggle  btn-outline-primary"
+						data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						Usuario</button>
+					<div class="dropdown-menu">
+						<a class="btn btn-info anchoheaderhref" data-toggle="collapse" href="/usuario/Agregar" role="button" aria-expanded="false" aria-controls="collapseExample">Agregar Usuario</a> <br></br>
+						<a class="btn btn-info anchoheaderhref" data-toggle="collapse" href="/usuario/Editar" role="button" aria-expanded="false" aria-controls="collapseExample">Editar Usuario </a> <br></br>	 
+					</div>
+				</div>
+
+
+				<div class="btn-group">
+					<button type="button" class="btn btn-info dropdown-toggle  btn-outline-primary"
+						data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						Clientes</button>
+					<div class="dropdown-menu">
+						<a class="btn btn-info anchoheaderhref" data-toggle="collapse" href="/cliente/Agregar" role="button" aria-expanded="false" aria-controls="collapseExample">Agregar Cliente  </a> <br></br>
+						<a class="btn btn-info anchoheaderhref" data-toggle="collapse" href="/cliente/Editar" role="button" aria-expanded="false" aria-controls="collapseExample">Editar Cliente   </a> <br></br>	 
+						<a class="btn btn-info anchoheaderhref" data-toggle="collapse" href="/cliente/Consultar" role="button" aria-expanded="false" aria-controls="collapseExample">Consutar Clientes</a> <br></br>	 
+					</div>
+				</div>
+
+				<div class="btn-group">
+					<button type="button" class="btn btn-info dropdown-toggle  btn-outline-primary"
+						data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						Horario</button>
+					<div class="dropdown-menu">
+						<a class="btn btn-info anchoheaderhref" data-toggle="collapse" href="/horario/Agregar" role="button" aria-expanded="false" aria-controls="collapseExample">Agregar Horario  </a> <br></br>
+						<a class="btn btn-info anchoheaderhref" data-toggle="collapse" href="/horario/Editar" role="button" aria-expanded="false" aria-controls="collapseExample">Editar Horario   </a> <br></br>	 
+						<a class="btn btn-info anchoheaderhref" data-toggle="collapse" href="/horario/Consultar" role="button" aria-expanded="false" aria-controls="collapseExample">Consutar Horarios</a> <br></br>	 
+					</div>
+				</div>
+				
+				<div class="btn-group">
+					<button type="button" class="btn btn-info dropdown-toggle  btn-outline-primary"
+						data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						Cita</button>
+					<div class="dropdown-menu">
+						<a class="btn btn-info anchoheaderhref" data-toggle="collapse" href="/cita/Agendar" role="button" aria-expanded="false" aria-controls="collapseExample">Agendar cita  </a> <br></br>
+						<a class="btn btn-info anchoheaderhref" data-toggle="collapse" href="/cita/Editar" role="button" aria-expanded="false" aria-controls="collapseExample">Editar Cita   </a> <br></br>	 
+						<a class="btn btn-info anchoheaderhref" data-toggle="collapse" href="/cita/Consultar" role="button" aria-expanded="false" aria-controls="collapseExample">Consutar Citas</a> <br></br>	 
+					</div>
+				</div>
+
+
+			</div>
+
+
+		</div>
+
+
+
+
+	</div>
+
+	 -->
+
+</body>
+</html>

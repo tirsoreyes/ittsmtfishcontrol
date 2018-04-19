@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</meta>
+<title>CitaT</title>
+
+</head>
+<body>
+	<div th:replace="fragment/header :: header" />
+
+	<nav class="navbar navbar-inverse  navbar-fixed-top">
+		<div class="container">
+
+
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed"
+					data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+					aria-controls="navbar">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#"> <img
+					src="webjars/img/citatesquina.png" /></a>
+
+
+			</div>
+
+			<div id="navbar" class="navbar-collapse collapse">
+
+				<form id="logout-form" class="navbar-form navbar-right">
+
+					<div class="btn-group">
+						<button type="button"
+							class="anchobotonmenu btn btn-info dropdown-toggle  btn-outline-primary anchobotonmenu"
+							data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							Empresa</button>
+						<div class="dropdown-menu">
+							<a class="btn btn-info anchoheaderhref"
+								href="/menu?content=empresaAgregar" role="button"
+								aria-expanded="false" aria-controls="collapseExample">Agregar
+								Empresa </a> <a class="btn btn-info anchoheaderhref"
+								href="/menu?content=empresaMisEmpresas" role="button"
+								aria-expanded="false" aria-controls="collapseExample">Mis
+								Empresas</a> 
+						</div>
+					</div>
+
+					<div class="btn-group">
+						<button type="button"
+							class="anchobotonmenu btn btn-info dropdown-toggle  btn-outline-primary"
+							data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							Usuario</button>
+						<div class="dropdown-menu">
+							<a class="btn btn-info anchoheaderhref"
+								href="/menu?content=usuarioAgregar" role="button"
+								aria-expanded="false" aria-controls="collapseExample">Agregar
+								Usuario</a> <br></br> <a class="btn btn-info anchoheaderhref"
+								href="/menu?content=usuarioMisUsuarios" role="button"
+								aria-expanded="false" aria-controls="collapseExample">Mis Usuarios </a> <br></br>
+						</div>
+					</div>
+
+
+					<div class="btn-group">
+						<button type="button"
+							class="anchobotonmenu btn btn-info dropdown-toggle  btn-outline-primary"
+							data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							Clientes</button>
+						<div class="dropdown-menu">
+							<a class="btn btn-info anchoheaderhref"
+								href="/menu?content=clienteAgregar" role="button"
+								aria-expanded="false" aria-controls="collapseExample">Agregar
+								Cliente </a> <br></br> <a class="btn btn-info anchoheaderhref"
+								href="/menu?content=clienteMisClientes" role="button"
+								aria-expanded="false" aria-controls="collapseExample">Mis Clientes</a> <br></br>
+						</div>
+					</div>
+
+					<div class="btn-group">
+						<button type="button"
+							class="anchobotonmenu btn btn-info dropdown-toggle  btn-outline-primary"
+							data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							Horario</button>
+						<div class="dropdown-menu">
+							<a class="btn btn-info anchoheaderhref"
+								href="/menu?content=horarioAgregar" role="button"
+								aria-expanded="false" aria-controls="collapseExample">Horarios </a> <br></br> 
+						</div>
+					</div>
+
+					<div class="btn-group">
+						<button type="button"
+							class="anchobotonmenu btn btn-info dropdown-toggle  btn-outline-primary"
+							data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							Cita</button>
+						<div class="dropdown-menu">
+							<a class="btn btn-info anchoheaderhref"
+								href="/menu?content=citaAgregar" role="button"
+								aria-expanded="false" aria-controls="collapseExample">Control de Citas </a> <br></br> 
+						</div>
+					</div>
+
+
+					
+
+					<!--  <a class="btn btn-info" href="/menu?content=logout" role="button" aria-expanded="false" aria-controls="collapseExample">Salir</a>-->
+					<a class="btn btn-info" href="/logout" role="button"
+						aria-expanded="false" aria-controls="collapseExample">Salir</a>
+					<!--  <button type="submit"  class="btn btn-info">Salir</button>-->
+
+
+
+				</form>
+			</div>
+
+		</div>
+	</nav>
+
+
+
+	<div class="fondoMenu">
+		<div class="botonesMenu"><p th:text="${'EMPRESA: '+user.nombreEmpresaActual+' - USUARIO: '+user.email+'  - PERFIL: '+user.nivel}">Perfil</p>
+		
+		</div>
+
+		
+	</div>
+
+
+	<div class="container">
+		<div th:replace="@{'views/' + ${content}} :: ${content}"></div>
+
+	</div>
+
+
+
+	<div th:replace="fragment/footer :: footer" />
+</body>
+</html>

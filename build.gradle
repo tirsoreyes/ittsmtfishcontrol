@@ -1,6 +1,6 @@
 buildscript {
 	ext {
-		springBootVersion = '1.5.12.RELEASE'
+		springBootVersion = '1.5.10.RELEASE'
 	}
 	repositories {
 		mavenCentral()
@@ -26,4 +26,34 @@ repositories {
 dependencies {
 	compile('org.springframework.boot:spring-boot-starter-web')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
+	compile('org.springframework.boot:spring-boot-starter-data-jpa')
+	// https://mvnrepository.com/artifact/mysql/mysql-connector-java
+	//compile group: 'mysql', name: 'mysql-connector-java', version: '5.1.46'
+	
+	
+	// https://mvnrepository.com/artifact/org.springframework/spring-jdbc
+compile group: 'org.springframework', name: 'spring-jdbc', version: '5.0.1.RELEASE'
+	compile files('./lib/mysql-connector-java-5.0.8-bin.jar')
+	compile('org.springframework.boot:spring-boot-starter-actuator')
+	compile('org.springframework.boot:spring-boot-starter-thymeleaf')
+	compile('org.webjars:bootstrap:3.3.7')
+	compile('org.webjars:jquery:2.0.3-1')
+	
+	 compile 'com.squareup.retrofit2:retrofit:2.3.0'
+	 compile 'com.google.code.gson:gson:2.8.1'
+	compile 'com.squareup.retrofit2:converter-gson:2.3.0'
+	compile 'com.google.code.simple-spring-memcached:spring-cache:3.4.0'
+	compile("org.springframework.boot:spring-boot-devtools")
+	compile 'com.google.code.simple-spring-memcached:xmemcached-provider:3.4.0'
+	compile group: 'commons-dbcp', name: 'commons-dbcp', version: '1.4'
+	compile('org.springframework.boot:spring-boot-starter-security')
+	compile('org.thymeleaf.extras:thymeleaf-extras-springsecurity4')
+	compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.0'
+	
+	// https://mvnrepository.com/artifact/commons-codec/commons-codec
+	compile group: 'commons-codec', name: 'commons-codec', version: '1.9'
+	
+	// https://mvnrepository.com/artifact/org.apache.commons/commons-email
+	compile group: 'org.apache.commons', name: 'commons-email', version: '1.1'
+	
 }

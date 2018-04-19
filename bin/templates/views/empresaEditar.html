@@ -1,0 +1,131 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
+
+<meta http-equiv="Content-Type" content="text/html" charset="utf-8" />
+
+</head>
+<body>
+
+	<div th:fragment="empresaEditar">
+
+
+
+	<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-8">
+					<div class="panel panel-info">
+						<div class="panel-heading" align="center">
+							<font size="4.5"><span class="fa fa-building-o"><strong>
+										Empresa</strong></span></font>
+						</div>
+						<div class="panel-body">
+							<form role="form">
+								<div class="form-group">
+									<label for="selectEmpresa"><strong>Seleccionar
+											Empresa:</strong></label> <select class="form-control" id="selectEmpresa"
+										name="selectEmpresa">
+										<option></option>
+									</select>
+								</div>
+								<div class="form-group">
+									<label for="txtEmpresaNombre"><strong>Nombre:</strong></label>
+									<input type="text" class="form-control" id="txtEmpresaNombre"
+										name="txtEmpresaNombre" placeholder="Nombre de la Empresa"/>
+								</div>
+								<div class="form-group">
+									<label for="txtEmpresaDireccion"><strong>Dirección:</strong></label>
+									<input type="text" class="form-control"
+										id="txtEmpresaDireccion" name="txtEmpresaDireccion"
+										placeholder="Dirección de la Empresa"/>
+								</div>
+								<div class="form-group">
+									<label for="txtEmpresaColonia"><strong>Colonia:</strong></label>
+									<input type="text" class="form-control" id="txtEmpresaColonia"
+										name="txtEmpresaColonia" placeholder="Colonia de la Empresa"/>
+								</div>
+								<div class="form-group">
+									<label for="txtEmpresaCiudad"><strong>Ciudad:</strong></label>
+									<input type="text" class="form-control" id="txtEmpresaCiudad"
+										name="txtEmpresaCiudad" placeholder="Ciudad de la Empresa"/>
+								</div>
+								<div class="form-group">
+									<label for="txtEmpresaMunicipio"><strong>Municipio:</strong></label>
+									<input type="text" class="form-control"
+										id="txtEmpresaMunicipio" name="txtEmpresaMunicipio"
+										placeholder="Municipio de la Empresa"/>
+								</div>
+								<div class="form-group">
+									<label for="txtEmpresaEstado"><strong>Estado:</strong></label>
+									<input type="text" class="form-control" id="txtEmpresaEstado"
+										name="txtEmpresaEstado" placeholder="Estado de la Empresa"/>
+								</div>
+								<div class="form-group">
+									<label for="txtEmpresaRegistro"><strong>Fecha
+											de Registro:</strong></label> <input type="text" class="form-control"
+										id="txtEmpresaRegistro" name="txtEmpresaRegistro"
+										placeholder="Registro de la Empresa"/>
+								</div>
+								<!--  <div class="form-group">
+						<label for="empresaLogo">Adjuntar logo</label> <input
+							type="file"  id="empresaLogo" name="empresaLogo">
+						<p class="help-block">Adjuntar el logo de la empresa.</p>
+					</div> -->
+								<div class="form-group">
+									<label for="empresaActivada">Empresa Activa</label> <input
+										type="checkbox" id="empresaActivada" name="empresaActivada"/>
+								</div>
+								<button type="submit" id="btnCrearEmpresa" class="btn btn-info">
+									<span class="glyphicon glyphicon-ok"></span> Crear
+								</button>
+								
+								<!-- <button type="submit" id="btnEliminarEmpresa" class="btn btn-info"><span class="glyphicon glyphicon-trash"></span> Eliminar</button> -->
+							</form>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+
+					<div class="panel panel-info">
+						<div class="panel-heading" align="center">
+							<font size="4.5"><span class="glyphicon glyphicon-picture"><strong>
+										Logo</strong></span></font>
+						</div>
+
+						<div class="panel-body">
+							<form method="post" id="formCreateMod"
+								class="form form-horizontal" enctype="multipart/form-data"
+								role="form">
+								<div class="fileinput fileinput-new" data-provides="fileinput">
+									<div class="fileinput-preview thumbnail"
+										data-trigger="fileinput"></div>
+									<div>
+										<span class="btn btn-default btn-file"><span
+											class="fileinput-new">Buscar</span><span
+											class="fileinput-exists">Cambiar</span><input type="file"
+											name="empresaLogo"/></span> <a href="#"
+											class="btn btn-default fileinput-exists"
+											data-dismiss="fileinput">Eliminar</a>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+
+
+
+
+
+
+	</div>
+
+
+
+</body>
+</html>

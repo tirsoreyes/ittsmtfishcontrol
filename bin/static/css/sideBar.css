@@ -1,0 +1,114 @@
+body {
+  background: #E1F5FE;
+  /*#ebf3fa*/
+}
+
+
+/* Profile container */
+.profile {
+  margin: 10px 0;
+}
+
+/* Profile sidebar */
+.profile-sidebar {
+  padding: 5px 5px 0px 0px;
+  /*background: #abdbe4;*/
+  background: #81D4FA;
+}
+
+.profile-userpic img {
+  float: none;
+  margin: 0 auto;
+  width: 40%;
+  height: 40%;
+  -webkit-border-radius: 50% !important;
+  -moz-border-radius: 50% !important;
+  border-radius: 50% !important;
+}
+
+.profile-usertitle {
+  /*margin-left: 15px;*/
+  margin-left: 15px;
+  text-align: Center;
+  margin-top: 20px;
+}
+
+.profile-usertitle-footer {
+  /*text-align: left;*/
+  font-size: 15px;
+  color: #5a7391;
+  padding: 20px;
+
+}
+
+.profile-usertitle-name {
+  color: #5a7391;
+ font-size: 10px;
+/*font-size: 12px;*/
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+.profile-usertitle-job {
+  text-transform: uppercase;
+  color: #5b9bd1;
+  /*font-size: 15px;*/
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+    
+.profile-usermenu {
+  margin-top: 50px;
+}
+
+.profile-usermenu ul li {
+  border-bottom: 2px solid #ffffff;
+  /*border-bottom: 3px solid #f0f4f7;*/
+}
+
+.profile-usermenu ul li:last-child {
+  border-bottom: none;
+}
+
+/*letra del menu sidebar*/
+.profile-usermenu ul li a {
+  color: #737373;
+  /*color: #93a3b5;*/
+  font-size: 16px;
+  /*color: #424546;
+  font-size: 15px;*/
+  font-weight: 600;
+}
+
+/*imagenes del menu sidebar*/
+.profile-usermenu ul li a i {
+  /*margin-right: 5px;
+  font-size: 14px;*/
+  margin-right: 9px;
+  font-size: 18px;
+}
+
+.profile-usermenu ul li a:hover {
+  background-color: #fafcfd;
+  color: #5b9bd1;
+}
+
+.profile-usermenu ul li.active {
+  border-bottom: 3px solid #f0f4f7;
+}
+
+.profile-usermenu ul li.active a {
+  color: #5b9bd1;
+  background-color: #f6f9fb;
+  border-left: 2px solid #5b9bd1;
+  margin-left: -2px;
+}
+
+/* Profile Content */
+.profile-content {
+  padding: 40px;
+  background: #fff;
+  min-height: 460px;
+}

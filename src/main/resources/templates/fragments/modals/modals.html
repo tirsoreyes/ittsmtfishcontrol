@@ -1,0 +1,178 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+
+<head>
+<div th:fragment="modales">
+
+
+
+		<div class="modal modal-royal" id="modalErrorLogin" tabindex="-1"
+		role="dialog" aria-labelledby="myModalLabel10" style="display: none;">
+		<div class="modal-dialog animated zoomIn animated-3x" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true"> <i class="zmdi zmdi-close"></i>
+						</span>
+					</button>
+					<h3 class="modal-title text-center" id="myModalLabel10">
+						<strong>&nbsp;&nbsp;&nbsp;ACCESO INCORRECTO</strong>
+					</h3>
+				</div>
+				<div class="modal-body text-center">
+					<div class="card card-primary">
+						<div>
+							<span>Por favor verifique sus datos de acceso</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	
+	<div class="modal modal-royal" id="modalRespuesta" tabindex="-1"
+		role="dialog" aria-labelledby="myModalLabel10" style="display: none;">
+		<div class="modal-dialog animated zoomIn animated-3x" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true"> <i class="zmdi zmdi-close"></i>
+						</span>
+					</button>
+					<h3 class="modal-title text-center" id="myModalLabel10">
+						<strong>&nbsp;&nbsp;&nbsp;MENSAJE</strong>
+					</h3>
+				</div>
+				<div class="modal-body text-center">
+					<div class="card card-primary">
+						<div>
+							<span id="modalRespuestaMensaje">mensaje</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+
+
+	<div class="modal modal-success" id="myModal2" tabindex="-1"
+		role="dialog" aria-labelledby="myModalLabel10" style="display: none;">
+		<div class="modal-dialog animated zoomIn animated-3x" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true"> <i class="zmdi zmdi-close"></i>
+						</span>
+					</button>
+					<h3 class="modal-title text-center" id="myModalLabel10">
+						<strong>&nbsp;&nbsp;&nbsp;CONTRATAR</strong>
+					</h3>
+				</div>
+				<div class="modal-body text-center">
+					<button type="button" class="btn  btn-success"
+						onclick="window.open('tel:018001204000');">¡Llámanos!</button>
+					<p>
+						Lláma sin ningún costo al <strong> 01800 120 4000.</strong>
+					</p>
+					<button type="button" class="btn  btn-success"
+						onclick="abrirChatWizz()">¡Chatea ahora!</button>
+					<p>Te atenderemos uno a uno para resolver tu solicitud.</p>
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+
+	<div class="modal modal-royal" id="myModal4" tabindex="-1"
+		role="dialog" aria-labelledby="myModalLabel10" style="display: none;">
+		<div class="modal-dialog animated zoomIn animated-3x" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true"> <i class="zmdi zmdi-close"></i>
+						</span>
+					</button>
+					<h3 class="modal-title text-center" id="myModalLabel10">
+						<strong>&nbsp;&nbsp;&nbsp;HISTORIAL DE PAGOS</strong>
+					</h3>
+				</div>
+				<div class="modal-body text-center">
+					<div class="card card-primary">
+						<table class="table table-no-border table-striped"
+							id="paymentsHistory">
+							<thead>
+								<tr>
+									<th>Forma de pago</th>
+									<th>Fecha</th>
+									<th>Cantidad</th>
+								</tr>
+							</thead>
+							<tbody id="pagos_body">
+								<div>
+									<span>No tienes pagos registrados</span>
+								</div>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	
+
+
+	
+
+	
+
+
+
+
+
+
+
+
+
+	
+
+	<div class="modal modal-royal"  id="myModalTipsRendimiento"
+		tabindex="-1" role="dialog" aria-labelledby="myModalLabel10"
+		style="display: none;">
+		<div class="modal-dialog animated zoomIn animated-3x" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true"> <i class="zmdi zmdi-close"></i>
+						</span>
+					</button>
+					<h3 class="modal-title text-center" id="myModalLabel10">
+						<strong>&nbsp;&nbsp;&nbsp;Tips para un mejor rendimiento</strong>
+					</h3>
+				</div>
+
+				<div  class="modal-body text-center">
+					
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+
+
+</div>
+</head>
+</html>

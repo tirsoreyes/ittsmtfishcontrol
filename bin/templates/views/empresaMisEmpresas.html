@@ -1,0 +1,49 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
+
+<meta http-equiv="Content-Type" content="text/html" charset="utf-8" />
+
+
+</head>
+<body>
+
+	<div th:fragment="empresaMisEmpresas">
+
+
+		<!--Table-->
+		<table class="table table-responsive-md">
+
+			<!--Table head-->
+			<thead class="cyan lighten-3">
+				<tr>
+					<th class="th-lg">Nombre comercial</th>
+					<th class="th-lg">fecha de Registro</th>
+					<th class="th-lg"></th>
+				</tr>
+			</thead>
+			<!--Table head-->
+
+			<!--Table body-->
+			<tbody>
+			    <tr th:each="emp: ${empresas}">
+      				<td th:text="${emp.nombre_Comercial}">Nombre comercial</td>
+      				<td th:text="${emp.fecha_Registro}">Fecha registro</td>
+      				<td> <button type="button" class="btn btn-outline-primary">Editar</button></td>
+      				
+    			</tr>
+			</tbody>
+			<!--Table body-->
+
+		</table>
+		<!--Table-->
+
+
+
+	</div>
+
+
+
+</body>
+</html>

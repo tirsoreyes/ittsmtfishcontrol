@@ -1,0 +1,1036 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+
+<head>
+<div th:fragment="modales">
+
+
+
+	<div class="modal modal-royal" id="myModal" tabindex="-1" role="dialog"
+		aria-labelledby="myModalLabel10" style="display: none;">
+		<div class="modal-dialog animated zoomIn animated-3x" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true"> <i class="zmdi zmdi-close"></i>
+						</span>
+					</button>
+					<h4 class="modal-title text-center" id="myModalLabel10">
+						<strong>&nbsp;&nbsp;&nbsp;INGRESA TU CÓDIGO POSTAL</strong>
+					</h4>
+				</div>
+
+				<div class="modal-body text-center">
+
+					<p class="modal-title text-center" style="color: #000080; font-size:90%">
+						PARA
+						CONFIRMAR QUE PODEMOS DARTE EL SERVICIO INGRESA AQUÍ TU CÓDIGO
+						POSTAL
+					</p>
+					
+				
+					<input type="number" maxlength="5" style="text-align: center;"
+						min="00000" max="99999" id="codigopostalcliente" name="cpCliente"
+						class="form-control" placeholder="Código postal" required="true"
+						value="" />
+					<button type="button" id="validaCP" class="btn  btn-royal">VALIDAR
+						COBERTURA</button>
+					<p id="respuestaValidaCP">Respuesta</p>
+
+					<br />
+					<!-- 
+					<div class="panel-group ms-collapse" id="accordion10"
+						role="tablist" aria-multiselectable="true">
+						<div class="panel panel-info"
+							style="box-shadow: none !important; margin-left: 15px !important;">
+							<div class="panel-heading" role="tab" id="headingOne10"
+								style="margin-left: -15px;">
+								<h4 class="panel-title">
+									<a class="collapsed withripple text-center" role="button"
+										data-toggle="collapse" data-parent="#accordion10"
+										href="#collapseOne10" aria-expanded="false"
+										aria-controls="collapseOne10"> ¿QUIERES QUE TE LLAMEMOS?
+										<div class="ripple-container"></div>
+									</a>
+								</h4>
+							</div>
+							<div id="collapseOne10" class="panel-collapse collapse"
+								role="tabpanel" aria-labelledby="headingOne10">
+								<div class="panel-body"
+									style="background: #f3eded !important; font-size: 1.2rem !important; padding-top: 5px; margin-left: -15px !important;">
+
+									<div class="alert alert-success" id="llamanosSuccess"
+										style="display: none;">Tu petición se envio de manera
+										corecta</div>
+
+									<form class="form-horizontal" id="llamanosform"
+										autocomplete="off">
+										<fieldset>
+				
+
+											<div class="form-group label-floating is-empty">
+												<div class="input-group">
+													<span class="input-group-addon"><i
+														class="zmdi zmdi-thumb-up-down"></i></span> <label
+														class="control-label" for="ms-llamanos-nom">Nombre:
+													</label> <input id="ms-llamanos-nom" class="form-control"
+														name="nombre" type="text" required="true"></input>
+												</div>
+												<div class="input-group">
+													<span class="input-group-addon"><i
+														class="zmdi zmdi-thumb-up-down"></i></span> <label
+														class="control-label" for="ms-llamanos-email">Correo:
+													</label> <input id="ms-llamanos-email" class="form-control"
+														name="email" type="email" required="true"></input>
+												</div>
+												<div class="input-group">
+													<span class="input-group-addon"><i
+														class="zmdi zmdi-thumb-up-down"></i></span> <label
+														class="control-label" for="ms-llamanos-tel">Teléfono:
+													</label> <input id="ms-llamanos-tel" class="form-control"
+														name="tel" type="tel" required="true"></input>
+												</div>
+											</div>
+
+											<div class="row mt-2">
+												<div class="col-md-6"></div>
+												<div class="col-md-6">
+													<button id="pymnt-btn"
+														class="btn btn-raised btn-primary pull-right">Enviar</button>
+												</div>
+											</div>
+
+
+										</fieldset>
+									</form>
+
+								</div>
+							</div>
+						</div>
+					</div>
+
+					-->
+
+				</div>
+
+
+
+			</div>
+		</div>
+	</div>
+
+
+
+	<div class="modal modal-royal" id="myModalContratar" tabindex="-1"
+		role="dialog" aria-labelledby="myModalLabel10" style="display: none;">
+		<div class="modal-dialog animated zoomIn animated-3x" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true"> <i class="zmdi zmdi-close"></i>
+						</span>
+					</button>
+
+					<h3 class="modal-title text-center" id="myModalLabel10">
+						<strong>&nbsp;&nbsp;&nbsp;CONTRATAR</strong>
+					</h3>
+				</div>
+				<div class="modal-body text-center">
+					<h4>
+						<b>No tenemos cobertura en ese código postal!</b>
+					</h4>
+					<button type="button" class="btn  btn-royal"
+						onclick="window.open('tel:018001204000');">¡Llámanos!</button>
+					<p>
+						Lláma sin ningún costo al <strong> 01800 120 4000.</strong>
+					</p>
+					<button type="button" class="btn  btn-royal"
+						onclick="abrirChatWizz()">¡Chatea ahora!</button>
+					<p>Te atenderemos uno a uno para resolver tu solicitud.</p>
+
+					<br />
+					<div class="panel-group ms-collapse" id="accordion10"
+						role="tablist" aria-multiselectable="true">
+						<div class="panel panel-info"
+							style="box-shadow: none !important; margin-left: 15px !important;">
+							<div class="panel-heading" role="tab" id="headingOne10"
+								style="margin-left: -15px;">
+								<h4 class="panel-title">
+									<a class="collapsed withripple text-center" role="button"
+										data-toggle="collapse" data-parent="#accordion10"
+										href="#collapseOne10" aria-expanded="false"
+										aria-controls="collapseOne10"> ¿QUIERES QUE TE LLAMEMOS?
+										<div class="ripple-container"></div>
+									</a>
+								</h4>
+							</div>
+							<div id="collapseOne10" class="panel-collapse collapse"
+								role="tabpanel" aria-labelledby="headingOne10">
+								<div class="panel-body"
+									style="background: #f3eded !important; font-size: 1.2rem !important; padding-top: 5px; margin-left: -15px !important;">
+
+									<div class="alert alert-success" id="llamanosSuccess"
+										style="display: none;">Tu petición se envio de manera
+										corecta</div>
+
+									<form class="form-horizontal" id="llamanosform"
+										autocomplete="off">
+										<fieldset>
+											<!--  <legend style="font-size:12px !important">Escribe el número telefónico en el que deseas recibir la llamada.</legend>  -->
+
+											<div class="form-group label-floating is-empty">
+												<div class="input-group">
+													<span class="input-group-addon"><i
+														class="zmdi zmdi-thumb-up-down"></i></span> <label
+														class="control-label" for="ms-llamanos-nom">Nombre:
+													</label> <input id="ms-llamanos-nom" class="form-control"
+														name="nombre" type="text" required="true"></input>
+												</div>
+												<div class="input-group">
+													<span class="input-group-addon"><i
+														class="zmdi zmdi-thumb-up-down"></i></span> <label
+														class="control-label" for="ms-llamanos-email">Correo:
+													</label> <input id="ms-llamanos-email" class="form-control"
+														name="email" type="email" required="true"></input>
+												</div>
+												<div class="input-group">
+													<span class="input-group-addon"><i
+														class="zmdi zmdi-thumb-up-down"></i></span> <label
+														class="control-label" for="ms-llamanos-tel">Teléfono:
+													</label> <input id="ms-llamanos-tel" class="form-control"
+														name="tel" type="tel" required="true"></input>
+												</div>
+											</div>
+
+											<div class="row mt-2">
+												<div class="col-md-6"></div>
+												<div class="col-md-6">
+													<button id="pymnt-btn"
+														class="btn btn-raised btn-primary pull-right">Enviar</button>
+												</div>
+											</div>
+
+
+										</fieldset>
+									</form>
+
+								</div>
+							</div>
+						</div>
+					</div>
+
+
+
+				</div>
+
+
+
+			</div>
+		</div>
+	</div>
+	
+	<div class="modal modal-royal" id="myModalContratar2" tabindex="-1"
+		role="dialog" aria-labelledby="myModalLabel10" style="display: none;">
+		<div class="modal-dialog animated zoomIn animated-3x" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true"> <i class="zmdi zmdi-close"></i>
+						</span>
+					</button>
+
+					<h3 class="modal-title text-center" id="myModalLabel10">
+						<strong>&nbsp;&nbsp;&nbsp;CONTRATAR</strong>
+					</h3>
+				</div>
+				<div class="modal-body text-center">
+					
+					<button type="button" class="btn  btn-royal"
+						onclick="window.open('tel:018001204000');">¡Llámanos!</button>
+					<p>
+						Lláma sin ningún costo al <strong> 01800 120 4000.</strong>
+					</p>
+					<button type="button" class="btn  btn-royal"
+						onclick="abrirChatWizz()">¡Chatea ahora!</button>
+					<p>Te atenderemos uno a uno para resolver tu solicitud.</p>
+
+					<br />
+					<div class="panel-group ms-collapse" id="accordion10"
+						role="tablist" aria-multiselectable="true">
+						<div class="panel panel-info"
+							style="box-shadow: none !important; margin-left: 15px !important;">
+
+							<div id="collapseOne10" class="panel-collapse collapse"
+								role="tabpanel" aria-labelledby="headingOne10">
+								<div class="panel-body"
+									style="background: #f3eded !important; font-size: 1.2rem !important; padding-top: 5px; margin-left: -15px !important;">
+
+									<div class="alert alert-success" id="llamanosSuccess"
+										style="display: none;">Tu petición se envio de manera
+										corecta</div>
+
+									<form class="form-horizontal" id="llamanosform"
+										autocomplete="off">
+										<fieldset>
+											<!--  <legend style="font-size:12px !important">Escribe el número telefónico en el que deseas recibir la llamada.</legend>  -->
+
+											<div class="form-group label-floating is-empty">
+												<div class="input-group">
+													<span class="input-group-addon"><i
+														class="zmdi zmdi-thumb-up-down"></i></span> <label
+														class="control-label" for="ms-llamanos-nom">Nombre:
+													</label> <input id="ms-llamanos-nom" class="form-control"
+														name="nombre" type="text" required="true"></input>
+												</div>
+												<div class="input-group">
+													<span class="input-group-addon"><i
+														class="zmdi zmdi-thumb-up-down"></i></span> <label
+														class="control-label" for="ms-llamanos-email">Correo:
+													</label> <input id="ms-llamanos-email" class="form-control"
+														name="email" type="email" required="true"></input>
+												</div>
+												<div class="input-group">
+													<span class="input-group-addon"><i
+														class="zmdi zmdi-thumb-up-down"></i></span> <label
+														class="control-label" for="ms-llamanos-tel">Teléfono:
+													</label> <input id="ms-llamanos-tel" class="form-control"
+														name="tel" type="tel" required="true"></input>
+												</div>
+											</div>
+
+											<div class="row mt-2">
+												<div class="col-md-6"></div>
+												<div class="col-md-6">
+													<button id="pymnt-btn"
+														class="btn btn-raised btn-primary pull-right">Enviar</button>
+												</div>
+											</div>
+
+
+										</fieldset>
+									</form>
+
+								</div>
+							</div>
+						</div>
+					</div>
+
+
+
+				</div>
+
+
+
+			</div>
+		</div>
+	</div>
+
+
+	<div class="modal modal-success" id="myModal2" tabindex="-1"
+		role="dialog" aria-labelledby="myModalLabel10" style="display: none;">
+		<div class="modal-dialog animated zoomIn animated-3x" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true"> <i class="zmdi zmdi-close"></i>
+						</span>
+					</button>
+					<h3 class="modal-title text-center" id="myModalLabel10">
+						<strong>&nbsp;&nbsp;&nbsp;CONTRATAR</strong>
+					</h3>
+				</div>
+				<div class="modal-body text-center">
+					<button type="button" class="btn  btn-success"
+						onclick="window.open('tel:018001204000');">¡Llámanos!</button>
+					<p>
+						Lláma sin ningún costo al <strong> 01800 120 4000.</strong>
+					</p>
+					<button type="button" class="btn  btn-success"
+						onclick="abrirChatWizz()">¡Chatea ahora!</button>
+					<p>Te atenderemos uno a uno para resolver tu solicitud.</p>
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+
+	<div class="modal modal-info" id="myModal3" tabindex="-1" role="dialog"
+		aria-labelledby="myModalLabel10" style="display: none;"
+		sec:authorize="isAuthenticated()">
+		<div class="modal-dialog animated zoomIn animated-3x" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true"> <i class="zmdi zmdi-close"></i>
+						</span>
+					</button>
+					<h3 class="modal-title text-center" id="myModalLabel10">
+						<strong>&nbsp;&nbsp;&nbsp;PAGAR AHORA</strong>
+					</h3>
+				</div>
+				<div class="modal-body text-center">
+
+					<form id="payment-form" onsubmit="return false;">
+						<h5>Por favor ingrese la información solicitada a
+							continuación</h5>
+
+
+						<div class="alert alert-danger" id="payError1"
+							style="display: none;">Cargo no aprobado por el banco
+							emisor.</div>
+						<div class="alert alert-danger" id="payGeneric"
+							style="display: none;">Servicio no disponible</div>
+
+						<div class="alert alert-success" id="payOk" style="display: none;">Servicio
+							no disponible</div>
+
+						<fieldset>
+							<div class="form-group label-floating is-empty">
+								<div class="input-group">
+									<span class="input-group-addon"><i
+										class="zmdi zmdi-card"></i></span> <label class="control-label"
+										for="ms-form-card">Número de tarjeta</label> <input
+										id="ms-form-card" class="form-control cc-number"
+										name="ccNumber" type="text" required="true"></input>
+								</div>
+							</div>
+							<div class="row mt-2">
+								<div class="col-md-6">
+									<div class="form-group label-floating is-empty">
+										<div class="input-group">
+											<span class="input-group-addon"><i
+												class="zmdi zmdi-calendar"></i></span> <label class="control-label"
+												for="cc-exp">Fecha de vencimiento (MM / YY)</label> <input
+												class="form-control  cc-exp" id="cc-exp" name="ccExp"
+												required="true"></input>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group label-floating is-empty">
+										<div class="input-group">
+											<span class="input-group-addon"><i
+												class="zmdi zmdi-lock"></i></span> <label class="control-label"
+												for="cc-cvc">CVV</label> <input class="form-control  cc-cvc"
+												id="cc-cvc" name="ccv" type="tel"></input> <input
+												class="form-control" id="cc-type" name="type" type="hidden"></input>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="row mt-2">
+								<div class="col-md-6"></div>
+								<div class="col-md-6">
+									<button id="pymnt-btn"
+										class="btn btn-raised btn-primary pull-right" th:text="Pagar"></button>
+								</div>
+							</div>
+						</fieldset>
+					</form>
+
+
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+	<div class="modal modal-royal" id="myModal4" tabindex="-1"
+		role="dialog" aria-labelledby="myModalLabel10" style="display: none;">
+		<div class="modal-dialog animated zoomIn animated-3x" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true"> <i class="zmdi zmdi-close"></i>
+						</span>
+					</button>
+					<h3 class="modal-title text-center" id="myModalLabel10">
+						<strong>&nbsp;&nbsp;&nbsp;HISTORIAL DE PAGOS</strong>
+					</h3>
+				</div>
+				<div class="modal-body text-center">
+					<div class="card card-primary">
+						<table class="table table-no-border table-striped"
+							id="paymentsHistory">
+							<thead>
+								<tr>
+									<th>Forma de pago</th>
+									<th>Fecha</th>
+									<th>Cantidad</th>
+								</tr>
+							</thead>
+							<tbody id="pagos_body">
+								<div>
+									<span>No tienes pagos registrados</span>
+								</div>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="modal modal-royal" id="myModal5" tabindex="-1"
+		role="dialog" aria-labelledby="myModalLabel10" style="display: none;">
+		<div class="modal-dialog animated zoomIn animated-3x" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true"> <i class="zmdi zmdi-close"></i>
+						</span>
+					</button>
+					<h3 class="modal-title text-center" id="myModalLabel10">
+						<strong>&nbsp;&nbsp;&nbsp;MIS FACTURAS</strong>
+					</h3>
+				</div>
+				<div class="modal-body text-center">
+					<div class="alert alert-success" id="invoiceOk"
+						style="display: none;">Se envió de manera correcta tu
+						factura a tu correo electrónico</div>
+					<div class="card card-primary">
+						<table class="table table-no-border table-striped"
+							id="invoiceHistory">
+							<thead>
+								<tr>
+									<th>Mes</th>
+									<th>Saldo</th>
+									<th>Enviar a correo</th>
+								</tr>
+							</thead>
+							<tbody id="facturas_body" style="text-align: left;">
+								<div>
+									<span>No tienes facturas</span>
+								</div>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal" id="myModal6" tabindex="-1" role="dialog"
+		aria-labelledby="myModalLabel10" style="display: none;">
+		<div class="modal-dialog animated zoomIn animated-3x" role="document">
+			<div class="modal-content">
+				<div class="modal-header"
+					style="background-color: #424242; color: #fff;">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true"> <i class="zmdi zmdi-close"></i>
+						</span>
+					</button>
+					<h3 class="modal-title text-center" id="myModalLabel10"
+						style="margin-bottom: 15px;">
+						<strong>&nbsp;&nbsp;&nbsp;Tarjeta de medios de pago</strong>
+					</h3>
+				</div>
+				<div class="modal-body text-center">
+					<div class="alert alert-success" id="cardOk" style="display: none;">Se
+						envió de manera correcta tu tarjeta de medios de pago a tu correo
+						electrónico</div>
+					<h5>
+						<strong>¿Qué es y para qué sirve la tarjeta de referencia
+							de pago?</strong>
+					</h5>
+					<h6>Es una práctica tarjeta que puedes guardar fácilmente en
+						tu cartera, la cual cuenta con los números de referencia que te
+						solicitarán para realizar tu pago sin necesidad de presentar tu
+						estado de cuenta</h6>
+					<div class="row">
+						<div class="col-md-6">
+							<h4>Descargar en PDF</h4>
+							<i class="fa fa-4x  fa-download" style="color: #424242"></i>
+							<p>Descarga tu tarjeta con un sólo clic y comienza a usarla.</p>
+							<a href="/mi-cuenta/wizzCard"
+								class="btn btn-alert btn-raised btn-block animated fadeInUp animation-delay-12"
+								style="color: #fff; background: #6763a0;"> Descargar </a>
+						</div>
+						<div class="col-md-6">
+							<h4>Enviar por correo electrónico</h4>
+							<i class="fa fa-4x  fa-envelope-open-o" style="color: #424242"></i>
+							<p>Solicita tu tarjeta y recíbela en tu correo electrónico
+								registrado.</p>
+							<a href="javascript:void(0)" id="sendWizzCard"
+								class="btn btn-alert btn-raised btn-block animated fadeInUp animation-delay-12"
+								style="color: #fff; background: #6763a0;"> Enviar </a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal modal-success" id="myModal10" tabindex="-1"
+		role="dialog" aria-labelledby="myModalLabel10" style="display: none;">
+		<div class="modal-dialog animated zoomIn animated-3x" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true"> <i class="zmdi zmdi-close"></i>
+						</span>
+					</button>
+					<h3 class="modal-title text-center" id="myModalLabel10">
+						<strong>Editar Perfil</strong>
+					</h3>
+				</div>
+
+
+				<div class="modal-body text-center">
+					<div class="row">
+						<div class="col-md-8">
+							<h4>Subir foto de perfil.</h4>
+							<img src="../../img/unicorn.png"
+								style="width: 100px; height: 100px; margin-top: -35px" alt="..."
+								class="img-avatar-circle" id="fotoperfil" />
+
+							<div class="row pull-right" style="margin-top: 40px;">
+								<label for="avatar" class="pull-left;" id="subirNuevaImagen"><span
+									style="color: #000 !important"> Subir nueva imagen</span></label> <input
+									id="fileinput" type="file" accept="image/jpeg, image/png"
+									onchange="readURL(this);" />
+
+							</div>
+
+
+							<div class="row mt-2">
+								<div class="col-md-4"></div>
+								<div class="col-md-4">
+									<button id="savePhoto"
+										class="btn btn-raised btn-success pull-right">Guardar
+										Nueva Foto</button>
+								</div>
+							</div>
+
+
+							<div class="form-group">
+								<output name="lista" id="list"></output>
+							</div>
+
+
+						</div>
+
+
+						<div class="col-md-4">
+							<h4>Cambiar contraseña</h4>
+							<form autocomplete="off" id="passchange-form"
+								onsubmit="return false;">
+
+								<div class="alert alert-danger" id="changePassErr"
+									style="display: none;">Las contraseñas no coinciden</div>
+
+								<div class="alert alert-success" id="changePassOk"
+									style="display: none;">Tu modificación se realizó con
+									exito</div>
+
+								<fieldset>
+									<div class="form-group label-floating is-empty">
+										<div class="input-group">
+											<span class="input-group-addon"><i
+												class="zmdi zmdi-lock"></i></span> <label class="control-label"
+												for="ms-form-pass1">Contraseña actual</label> <input
+												id="ms-form-pass1" class="form-control" type="password"
+												name="pass" required="true" />
+										</div>
+									</div>
+									<div class="form-group label-floating is-empty">
+										<div class="input-group">
+											<span class="input-group-addon"><i
+												class="zmdi zmdi-lock"></i></span> <label class="control-label"
+												for="ms-form-pass2">Nueva contraseña</label> <input
+												id="ms-form-pass2" class="form-control" type="password"
+												name="pass2" required="true" />
+										</div>
+									</div>
+									<div class="row mt-2">
+										<div class="col-md-6"></div>
+										<div class="col-md-6">
+											<button id="chngpass-btn"
+												class="btn btn-raised btn-success pull-right">Cambiar</button>
+										</div>
+									</div>
+								</fieldset>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal modal-success" id="myModal11" tabindex="-1"
+		role="dialog" aria-labelledby="myModalLabel10" style="display: none;">
+		<div class="modal-dialog animated zoomIn animated-3x" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true"> <i class="zmdi zmdi-close"></i>
+						</span>
+					</button>
+					<h3 class="modal-title text-center" id="myModalLabel10">
+						<strong>Cargo Recurrente</strong>
+					</h3>
+				</div>
+				<div class="modal-body text-center">
+					<form id="rucurrent-form" onsubmit="return false;">
+						<h5>¡Olvídate de las fechas de corte! Al domiciliar wizz plus
+							a tu tarjeta, tu servicio se pagará de forma automática.</h5>
+
+
+						<div class="alert alert-danger" id="rucurrentError1"
+							style="display: none;">Cargo no aprobado por el banco
+							emisor.</div>
+						<div class="alert alert-danger" id="rucurrentGeneric"
+							style="display: none;">Servicio no disponible</div>
+
+						<div class="alert alert-success" id="rucurrenteOk"
+							style="display: none;">Servicio no disponible</div>
+
+						<fieldset>
+							<div class="form-group label-floating is-empty">
+								<div class="input-group">
+									<span class="input-group-addon"><i
+										class="zmdi zmdi-card"></i></span> <label class="control-label"
+										for="ms-form-card">Número de tarjeta</label> <input
+										id="ms-form-card" class="form-control cc-number2"
+										name="ccNumber" type="text" required="true"></input>
+								</div>
+							</div>
+							<div class="row mt-2">
+								<div class="col-md-6">
+									<div class="form-group label-floating is-empty">
+										<div class="input-group">
+											<span class="input-group-addon"><i
+												class="zmdi zmdi-calendar"></i></span> <label class="control-label"
+												for="cc-exp2">Fecha de vencimiento (MM / YY)</label> <input
+												class="form-control  cc-exp2" id="cc-exp2" name="ccExp"
+												required="true"></input>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group label-floating is-empty">
+										<div class="input-group">
+											<span class="input-group-addon"><i
+												class="zmdi zmdi-lock"></i></span> <label class="control-label"
+												for="cc-cvc2">CVV</label> <input
+												class="form-control  cc-cvc2" id="cc-cvc2" name="ccv"
+												type="tel"></input> <input class="form-control"
+												id="cc-type2" name="type" type="hidden"></input>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="row mt-2">
+								<div class="col-md-6"></div>
+								<div class="col-md-6">
+									<button id="pymnt-btn2"
+										class="btn btn-raised btn-primary pull-right"
+										th:text="Guardar"></button>
+								</div>
+							</div>
+						</fieldset>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="modal modal-royal" id="myModal12" tabindex="-1"
+		role="dialog" aria-labelledby="myModalLabel10" style="display: none;">
+		<div class="modal-dialog animated zoomIn animated-3x" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true"> <i class="zmdi zmdi-close"></i>
+						</span>
+					</button>
+					<h3 class="modal-title text-center" id="myModalLabel10">
+						<strong>Dr. WiFi</strong>
+					</h3>
+				</div>
+				<div class="modal-body text-center">
+					<div class="alert alert-success" id="wifiSuccess"
+						style="display: none;">Tu petición se envio de manera
+						corecta</div>
+					<div class="row">
+						<div class="col-md-6 pull-left">
+							<h4 class="pull-left">¿Qué es Dr. WiFi?</h4>
+							<h6 class="pull-left">Soporte ilimitado de un técnico
+								especializado que ingresa a tu equipo vía remota y de forma
+								segura. El servició está disponible de Lunes a Viernes de 9:00 a
+								18:00 hrs. Para solicitar asistencia comunícate al 01 800 222
+								1234 desde cualquier teléfono o marcando *123 desde tu línea
+								wizzplus</h6>
+							<button class="btn btn-raised btn-royal pull-left"
+								onclick="abrirChatWifi()">Chatear con el Dr. WiFi</button>
+							<br />
+							<h4 class="pull-left">Asistencia a domicilio</h4>
+							<h6 class="pull-left">En caso de que la asistencia
+								telefónica o remota no sea suficiente para solucionar tu
+								problema, podrás solicitar que un técnico especializado acuda a
+								tu domicilio de Lunes a Viernes de 9:00 a 18:00 hrs. Incluye 2
+								eventos sin costo por año.</h6>
+							<h4 id="drrest" class="pull-left">Tienes 2 visitas restantes</h4>
+						</div>
+						<div class="col-md-6">
+
+							<h4 class="pull-left">Nuestro técnico te visitará en la
+								dirección:</h4>
+
+							<h5 id="drdir"></h5>
+							<form id="drwifi-form" onsubmit="return false;">
+								<fieldset>
+									<div class="form-group">
+
+										<div class='input-group date'>
+											<input type='text' class="form-control" name="FHVisita"
+												required="true" placeholder="Selecciona una fecha"
+												id="datetimepicker1" /> <span class="input-group-addon">
+												<span class="glyphicon glyphicon-calendar"></span>
+											</span>
+										</div>
+
+
+										<h5 class="pull-left">Motivo:</h5>
+
+
+										<select id="select111" class="form-control selectpicker">
+											<option value="Correo electrónico">Correo
+												electrónico</option>
+											<option value="Navegación lenta">Navegación lenta</option>
+											<option value="Problemas de conectividad">Problemas
+												de conectividad</option>
+											<option value="Sin navegación">Sin navegación</option>
+											<option value="Soporte a dispositivos de red">Soporte
+												a dispositivos de red</option>
+											<option value="Soporte a dispositivos móviles">Soporte
+												a dispositivos móviles</option>
+											<option value="Soporte a PC/Mac">Soporte a PC/Mac</option>
+											<option value="Soporte a dispositivos periféricos">Soporte
+												a dispositivos periféricos</option>
+										</select>
+										<button class="btn btn-raised btn-royal pull-left">Solicitar
+											visita</button>
+									</div>
+								</fieldset>
+							</form>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+	<div class="modal modal-royal" id="myModalError" tabindex="-1"
+		role="dialog" aria-labelledby="myModalLabel10" style="display: none;">
+		<div class="modal-dialog animated zoomIn animated-3x" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true"> <i class="zmdi zmdi-close"></i>
+						</span>
+					</button>
+					<h3 class="modal-title text-center" id="myModalLabel10">
+						<strong>&nbsp;&nbsp;&nbsp;ESTADO DE CUENTA</strong>
+					</h3>
+				</div>
+				<div class="modal-body text-center">
+					<div class="card card-primary">
+						<div>
+							<span>Tu estado de cuenta aún no esta disponible</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="modal modal-royal" id="myModal16" tabindex="-1"
+		role="dialog" aria-labelledby="myModalLabel10" style="display: none;">
+		<div class="modal-dialog animated zoomIn animated-3x" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true"> <i class="zmdi zmdi-close"></i>
+						</span>
+					</button>
+					<h3 class="modal-title text-center" id="myModalLabel10">
+						<strong>&nbsp;&nbsp;&nbsp; Conserva tu número</strong>
+					</h3>
+				</div>
+				<div class="pull-left" id="portabilidad1"
+					style="margin-left: 20px; font-size: 16px; margin-top: 10px;">
+					<i class="zmdi zmdi-alert-circle-o"></i><span id="peticionesPorta">Actualmente
+						no tienes trámites de portabilidad en proceso</span>
+				</div>
+				<div class="modal-body" style="margin-top: 15px;">
+					<div class="card card-primary"></div>
+					<div class="panel panel-default " id="nuevoPorta"
+						style="display: hidden;">
+						<div class="panel-heading" role="tab" id="headingOne">
+							<h4 class="panel-title ms-rotate-icon">
+								<a class="collapsed " role="button" data-toggle="collapse"
+									data-parent="#accordion" href="#collapseOne"
+									aria-expanded="true" aria-controls="collapseOne"> <i
+									class="zmdi zmdi-attachment-alt"></i> Iniciar trámite
+								</a>
+							</h4>
+						</div>
+						<div id="collapseOne" class="panel-collapse collapse"
+							role="tabpanel" aria-labelledby="headingOne" style="">
+							<div class="panel-body">
+								<div class="alert alert-danger" id="portaError"
+									style="display: none;">Servicio no disponible</div>
+								<span> <strong>Ingresa tu NIPs y Número a portar</strong></span>
+								<p style="font-size: 13px;">Llama al 051 desde el número
+									telefónico que deseas portar para recibir tu NIP de 4 dígitos.</p>
+								<form id="portabilidad-form" onsubmit="return false;">
+									<fieldset>
+										<div class="form-group row">
+
+											<div class="col-md-4">
+												<h5 class="pull-left">NIP</h5>
+												<input id="porta_nip" class="form-control" type="text"
+													name="nip" required="true" maxlength="4" minlength="4" />
+											</div>
+											<div class="col-md-4">
+												<h5 class="pull-left">Ingresa tu Número</h5>
+												<input id="porta_tel" class="form-control" type="tel"
+													name="telPort" required="true" maxlength="10"
+													minlength="10" />
+											</div>
+											<div class="col-md-4">
+												<h5 class="pull-left">Número izzi</h5>
+
+												<select id="selectporta" class="form-control selectpicker"
+													style="margin-top: 0;">
+
+												</select>
+											</div>
+
+
+											<button class="btn btn-raised btn-royal pull-left">Iniciar
+												trámite</button>
+										</div>
+									</fieldset>
+								</form>
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+	<div class="modal modal-royal" id="myModalEstablecimientos"
+		tabindex="-1" role="dialog" aria-labelledby="myModalLabel10"
+		style="display: none;">
+		<div class="modal-dialog animated zoomIn animated-3x" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true"> <i class="zmdi zmdi-close"></i>
+						</span>
+					</button>
+					<h3 class="modal-title text-center" id="myModalLabel10">
+						<strong>&nbsp;&nbsp;&nbsp;LISTA DE ESTABLECIMIENTOS</strong>
+					</h3>
+				</div>
+
+				<div class="wrapper">
+					<ul style="list-style: none; color: #595959;">
+						<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+							class="fa fa-users">&nbsp;&nbsp;Farmacias del Ahorro</span></li>
+						<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+							class="fa fa-users">&nbsp;&nbsp;Suburbia</span></li>
+						<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+							class="fa fa-users">&nbsp;&nbsp;OXXO</span></li>
+						<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+							class="fa fa-users">&nbsp;&nbsp;Sam's Club</span></li>
+						<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+							class="fa fa-users">&nbsp;&nbsp;Tiendas Mambo</span></li>
+						<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+							class="fa fa-users">&nbsp;&nbsp;Walmart</span></li>
+						<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+							class="fa fa-users">&nbsp;&nbsp;Chedraui</span></li>
+						<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+							class="fa fa-users">&nbsp;&nbsp;Superama</span></li>
+						<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+							class="fa fa-users">&nbsp;&nbsp;Milano</span></li>
+						<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+							class="fa fa-users">&nbsp;&nbsp;Famsa</span></li>
+						<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+							class="fa fa-users">&nbsp;&nbsp;Aeroflash</span></li>
+						<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+							class="fa fa-users">&nbsp;&nbsp;Extra</span></li>
+						<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+							class="fa fa-users">&nbsp;&nbsp;Elektra</span></li>
+						<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+							class="fa fa-users">&nbsp;&nbsp;Bodega Aurrera Express</span></li>
+						<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+							class="fa fa-users">&nbsp;&nbsp;Bodega Aurrera</span></li>
+					</ul>
+					<br />
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="modal modal-royal"  id="myModalTipsRendimiento"
+		tabindex="-1" role="dialog" aria-labelledby="myModalLabel10"
+		style="display: none;">
+		<div class="modal-dialog animated zoomIn animated-3x" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true"> <i class="zmdi zmdi-close"></i>
+						</span>
+					</button>
+					<h3 class="modal-title text-center" id="myModalLabel10">
+						<strong>&nbsp;&nbsp;&nbsp;Tips para un mejor rendimiento</strong>
+					</h3>
+				</div>
+
+				<div  class="modal-body text-center">
+					<img alt="" src="../../img/extensor.jpg" />
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+
+
+</div>
+</head>
+</html>

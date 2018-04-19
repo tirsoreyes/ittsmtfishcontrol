@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+
+<head>
+    <title>CitaT</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> </meta>
+    <!-- Bootstrap -->
+    <link href="webjars/library/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen"> </link>
+    
+   <link rel="icon" href="webjars/img/iconocitat.png"/>
+    
+</head>
+<body>
+
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed"
+					data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+					aria-controls="navbar">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#"> <img
+					src="webjars/img/citatesquina.png"/></a>
+			
+			</div>
+			
+			
+			
+			
+				
+			<div id="navbar" class="navbar-collapse collapse">
+
+				<form id="login-form" class="navbar-form navbar-right">
+
+					<div class="form-group">
+						<input type="text" id="txtUsuarioLogin" name="username"
+							placeholder="Correo Electrónico" class="form-control" th:required="required"/>
+					</div>
+					<div class="form-group">
+						<input type="password" id="txtContrasenaLogin"
+							name="password" placeholder="Contraseña"
+							class="form-control" th:required="required"/>
+					
+					</div>
+					<button type="submit" id="btnIngresar" class="btn btn-info">Ingresar</button>
+					<a href="#conocenos" class="scroll"><font color="white">  <strong>  Conócenos</strong></font></a>
+					
+					
+				
+				
+
+					
+				</form>
+			</div>
+			<!--/.navbar-collapse -->
+		</div>
+	</nav>
+	
+
+
+
+
+<div th:replace="fragment/footer :: footer"/>    
+</body>
+
+
+
+
+</html>
