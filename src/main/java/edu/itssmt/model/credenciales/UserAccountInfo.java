@@ -34,7 +34,7 @@ public class UserAccountInfo {
 
 	public void setUserCredentials(Credenciales credentials) {
 		if (getAuth() != null) {
-			Authentication userAuth = new UsernamePasswordAuthenticationToken(credentials.getEmail(),
+			Authentication userAuth = new UsernamePasswordAuthenticationToken(credentials.getCorreo(),
 					credentials, new ArrayList<GrantedAuthority>());
 			SecurityContextHolder.getContext().setAuthentication(userAuth);
 		}

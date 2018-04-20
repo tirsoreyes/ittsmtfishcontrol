@@ -12,48 +12,34 @@ import java.util.List;
  */
 @Entity
 @Table(name="t_usuario")
-//@NamedQueries({
 @NamedQuery(name="TUsuario.findAll", query="SELECT t FROM TUsuario t")
-//@NamedQuery(name="TUsuario.findByEmail", query="SELECT t FROM TUsuario t where t.email =:email"),// verificar la sintaxis
-//@NamedQuery(name="TUsuario.findByToken", query="SELECT t FROM TUsuario t where t.token =:token")
-//})
 public class TUsuario implements Serializable {
 	private static final long serialVersionUID = 1L;
-	
-	
+
 	@Id
-	@Column(name="Id")
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int id;
-	@Column(name="Acceso_From")
-	private String acceso_From;
-	@Column(name="Apellido_Materno")
-	private String apellido_Materno;
-	@Column(name="Apellido_Paterno")
-	private String apellido_Paterno;
-	@Column(name="Celular")
-	private String celular;
-	@Column(name="email")
-	private String email;
-	@Column(name="Estatus")
-	private String estatus;
-	@Column(name="Nombre")
-	private String nombre;
-	@Column(name="Pass")
-	private String pass;
-	@Column(name="Token")
-	private String token;
-	@Column(name="Ultima_Ubicacion")
-	private String ultima_Ubicacion;
-	@Column(name="Ultimo_Acceso")
+	private int idUsuario;
+
+	private String apellidos;
+
+	private String correo;
+
 	@Temporal(TemporalType.TIMESTAMP)
-	private Date ultimo_Acceso;
+	@Column(name="fecha_registro")
+	private Date fechaRegistro;
+
+	@Temporal(TemporalType.TIMESTAMP)
+	@Column(name="fecha_ultimo_acceso")
+	private Date fechaUltimoAcceso;
+
+	private String nombre;
+
+	private String telefono;
 	
-	@Column(name="avatar")
 	@Lob
 	private byte[] avatar;
-	
 
+	
 	public byte[] getAvatar() {
 		return avatar;
 	}
@@ -66,71 +52,56 @@ public class TUsuario implements Serializable {
 	@OneToMany(mappedBy="TUsuario")
 	private List<TBitacora> TBitacoras;
 
-	//bi-directional many-to-one association to TCita
+	//bi-directional many-to-one association to TPedido
 	@OneToMany(mappedBy="TUsuario")
-	private List<TCita> TCitas;
+	private List<TPedido> TPedidos;
 
-	//bi-directional many-to-one association to TUsuarioGrupoEmpresa
-	@OneToMany(mappedBy="TUsuario")
-	private List<TUsuarioGrupoEmpresa> TUsuarioGrupoEmpresas;
+	//bi-directional many-to-one association to TGrupo
+	@ManyToOne
+	@JoinColumn(name="t_grupo_idGrupo")
+	private TGrupo TGrupo;
 
 	public TUsuario() {
 	}
 
-	public int getId() {
-		return this.id;
+	public int getIdUsuario() {
+		return this.idUsuario;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public void setIdUsuario(int idUsuario) {
+		this.idUsuario = idUsuario;
 	}
 
-	public String getAcceso_From() {
-		return this.acceso_From;
+	public String getApellidos() {
+		return this.apellidos;
 	}
 
-	public void setAcceso_From(String acceso_From) {
-		this.acceso_From = acceso_From;
+	public void setApellidos(String apellidos) {
+		this.apellidos = apellidos;
 	}
 
-	public String getApellido_Materno() {
-		return this.apellido_Materno;
+	public String getCorreo() {
+		return this.correo;
 	}
 
-	public void setApellido_Materno(String apellido_Materno) {
-		this.apellido_Materno = apellido_Materno;
+	public void setCorreo(String correo) {
+		this.correo = correo;
 	}
 
-	public String getApellido_Paterno() {
-		return this.apellido_Paterno;
+	public Date getFechaRegistro() {
+		return this.fechaRegistro;
 	}
 
-	public void setApellido_Paterno(String apellido_Paterno) {
-		this.apellido_Paterno = apellido_Paterno;
+	public void setFechaRegistro(Date fechaRegistro) {
+		this.fechaRegistro = fechaRegistro;
 	}
 
-	public String getCelular() {
-		return this.celular;
+	public Date getFechaUltimoAcceso() {
+		return this.fechaUltimoAcceso;
 	}
 
-	public void setCelular(String celular) {
-		this.celular = celular;
-	}
-
-	public String getEmail() {
-		return this.email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-	public String getEstatus() {
-		return this.estatus;
-	}
-
-	public void setEstatus(String estatus) {
-		this.estatus = estatus;
+	public void setFechaUltimoAcceso(Date fechaUltimoAcceso) {
+		this.fechaUltimoAcceso = fechaUltimoAcceso;
 	}
 
 	public String getNombre() {
@@ -141,36 +112,12 @@ public class TUsuario implements Serializable {
 		this.nombre = nombre;
 	}
 
-	public String getPass() {
-		return this.pass;
+	public String getTelefono() {
+		return this.telefono;
 	}
 
-	public void setPass(String pass) {
-		this.pass = pass;
-	}
-
-	public String getToken() {
-		return this.token;
-	}
-
-	public void setToken(String token) {
-		this.token = token;
-	}
-
-	public String getUltima_Ubicacion() {
-		return this.ultima_Ubicacion;
-	}
-
-	public void setUltima_Ubicacion(String ultima_Ubicacion) {
-		this.ultima_Ubicacion = ultima_Ubicacion;
-	}
-
-	public Date getUltimo_Acceso() {
-		return this.ultimo_Acceso;
-	}
-
-	public void setUltimo_Acceso(Date ultimo_Acceso) {
-		this.ultimo_Acceso = ultimo_Acceso;
+	public void setTelefono(String telefono) {
+		this.telefono = telefono;
 	}
 
 	public List<TBitacora> getTBitacoras() {
@@ -195,48 +142,34 @@ public class TUsuario implements Serializable {
 		return TBitacora;
 	}
 
-	public List<TCita> getTCitas() {
-		return this.TCitas;
+	public List<TPedido> getTPedidos() {
+		return this.TPedidos;
 	}
 
-	public void setTCitas(List<TCita> TCitas) {
-		this.TCitas = TCitas;
+	public void setTPedidos(List<TPedido> TPedidos) {
+		this.TPedidos = TPedidos;
 	}
 
-	public TCita addTCita(TCita TCita) {
-		getTCitas().add(TCita);
-		TCita.setTUsuario(this);
+	public TPedido addTPedido(TPedido TPedido) {
+		getTPedidos().add(TPedido);
+		TPedido.setTUsuario(this);
 
-		return TCita;
+		return TPedido;
 	}
 
-	public TCita removeTCita(TCita TCita) {
-		getTCitas().remove(TCita);
-		TCita.setTUsuario(null);
+	public TPedido removeTPedido(TPedido TPedido) {
+		getTPedidos().remove(TPedido);
+		TPedido.setTUsuario(null);
 
-		return TCita;
+		return TPedido;
 	}
 
-	public List<TUsuarioGrupoEmpresa> getTUsuarioGrupoEmpresas() {
-		return this.TUsuarioGrupoEmpresas;
+	public TGrupo getTGrupo() {
+		return this.TGrupo;
 	}
 
-	public void setTUsuarioGrupoEmpresas(List<TUsuarioGrupoEmpresa> TUsuarioGrupoEmpresas) {
-		this.TUsuarioGrupoEmpresas = TUsuarioGrupoEmpresas;
-	}
-
-	public TUsuarioGrupoEmpresa addTUsuarioGrupoEmpresa(TUsuarioGrupoEmpresa TUsuarioGrupoEmpresa) {
-		getTUsuarioGrupoEmpresas().add(TUsuarioGrupoEmpresa);
-		TUsuarioGrupoEmpresa.setTUsuario(this);
-
-		return TUsuarioGrupoEmpresa;
-	}
-
-	public TUsuarioGrupoEmpresa removeTUsuarioGrupoEmpresa(TUsuarioGrupoEmpresa TUsuarioGrupoEmpresa) {
-		getTUsuarioGrupoEmpresas().remove(TUsuarioGrupoEmpresa);
-		TUsuarioGrupoEmpresa.setTUsuario(null);
-
-		return TUsuarioGrupoEmpresa;
+	public void setTGrupo(TGrupo TGrupo) {
+		this.TGrupo = TGrupo;
 	}
 
 }

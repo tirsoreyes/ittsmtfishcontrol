@@ -17,35 +17,25 @@ public class TGrupo implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int id;
-
-	private String descripcion;
+	private int idGrupo;
 
 	private String nombre;
 
-	private String permiso;
+	private String permisos;
 
-	//bi-directional many-to-one association to TUsuarioGrupoEmpresa
+	//bi-directional many-to-one association to TUsuario
 	@OneToMany(mappedBy="TGrupo")
-	private List<TUsuarioGrupoEmpresa> TUsuarioGrupoEmpresas;
+	private List<TUsuario> TUsuarios;
 
 	public TGrupo() {
 	}
 
-	public int getId() {
-		return this.id;
+	public int getIdGrupo() {
+		return this.idGrupo;
 	}
 
-	public void setId(int id) {
-		this.id = id;
-	}
-
-	public String getDescripcion() {
-		return this.descripcion;
-	}
-
-	public void setDescripcion(String descripcion) {
-		this.descripcion = descripcion;
+	public void setIdGrupo(int idGrupo) {
+		this.idGrupo = idGrupo;
 	}
 
 	public String getNombre() {
@@ -56,34 +46,34 @@ public class TGrupo implements Serializable {
 		this.nombre = nombre;
 	}
 
-	public String getPermiso() {
-		return this.permiso;
+	public String getPermisos() {
+		return this.permisos;
 	}
 
-	public void setPermiso(String permiso) {
-		this.permiso = permiso;
+	public void setPermisos(String permisos) {
+		this.permisos = permisos;
 	}
 
-	public List<TUsuarioGrupoEmpresa> getTUsuarioGrupoEmpresas() {
-		return this.TUsuarioGrupoEmpresas;
+	public List<TUsuario> getTUsuarios() {
+		return this.TUsuarios;
 	}
 
-	public void setTUsuarioGrupoEmpresas(List<TUsuarioGrupoEmpresa> TUsuarioGrupoEmpresas) {
-		this.TUsuarioGrupoEmpresas = TUsuarioGrupoEmpresas;
+	public void setTUsuarios(List<TUsuario> TUsuarios) {
+		this.TUsuarios = TUsuarios;
 	}
 
-	public TUsuarioGrupoEmpresa addTUsuarioGrupoEmpresa(TUsuarioGrupoEmpresa TUsuarioGrupoEmpresa) {
-		getTUsuarioGrupoEmpresas().add(TUsuarioGrupoEmpresa);
-		TUsuarioGrupoEmpresa.setTGrupo(this);
+	public TUsuario addTUsuario(TUsuario TUsuario) {
+		getTUsuarios().add(TUsuario);
+		TUsuario.setTGrupo(this);
 
-		return TUsuarioGrupoEmpresa;
+		return TUsuario;
 	}
 
-	public TUsuarioGrupoEmpresa removeTUsuarioGrupoEmpresa(TUsuarioGrupoEmpresa TUsuarioGrupoEmpresa) {
-		getTUsuarioGrupoEmpresas().remove(TUsuarioGrupoEmpresa);
-		TUsuarioGrupoEmpresa.setTGrupo(null);
+	public TUsuario removeTUsuario(TUsuario TUsuario) {
+		getTUsuarios().remove(TUsuario);
+		TUsuario.setTGrupo(null);
 
-		return TUsuarioGrupoEmpresa;
+		return TUsuario;
 	}
 
 }

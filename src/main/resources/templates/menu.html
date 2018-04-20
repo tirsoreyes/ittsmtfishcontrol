@@ -7,104 +7,70 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </meta>
-<title>CitaT</title>
-
+<title>Fish Control</title>
+<link rel="icon" href="webjars/img/Application.png" />
 </head>
 <body>
-	<div th:replace="fragment/header :: header" />
 
-	<nav class="navbar navbar-inverse  navbar-fixed-top">
-		<div class="container">
+
+
+
+
+
+<nav class="navbar navbar-light justify-content-between" style="background-color: #e3f2fd;">
+		
+		  
+
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Features</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Pricing</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dropdown link
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+	<div class="container">
 
 
 			<div class="navbar-header">
-				<button type="button" class="navbar-toggle collapsed"
-					data-toggle="collapse" data-target="#navbar" aria-expanded="false"
-					aria-controls="navbar">
-					<span class="sr-only">Toggle navigation</span> <span
-						class="icon-bar"></span> <span class="icon-bar"></span> <span
-						class="icon-bar"></span>
-				</button>
 				<a class="navbar-brand" href="#"> <img
-					src="webjars/img/citatesquina.png" /></a>
+					src="webjars/img/Application.png" /></a>
 
 
 			</div>
+			
+			
+		
+			
+			
 
-			<div id="navbar" class="navbar-collapse collapse">
-
-				<form id="logout-form" class="navbar-form navbar-right">
-
-					<div class="btn-group">
-						<button type="button"
-							class="anchobotonmenu btn btn-info dropdown-toggle  btn-outline-primary anchobotonmenu"
-							data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							Empresa</button>
-						<div class="dropdown-menu">
-							<a class="btn btn-info anchoheaderhref"
-								href="/menu?content=empresaAgregar" role="button"
-								aria-expanded="false" aria-controls="collapseExample">Agregar
-								Empresa </a> <a class="btn btn-info anchoheaderhref"
-								href="/menu?content=empresaMisEmpresas" role="button"
-								aria-expanded="false" aria-controls="collapseExample">Mis
-								Empresas</a> 
-						</div>
-					</div>
+				<form id="logout-form" class="form-inline">
+				
 
 					<div class="btn-group">
-						<button type="button"
-							class="anchobotonmenu btn btn-info dropdown-toggle  btn-outline-primary"
-							data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							Usuario</button>
-						<div class="dropdown-menu">
-							<a class="btn btn-info anchoheaderhref"
-								href="/menu?content=usuarioAgregar" role="button"
-								aria-expanded="false" aria-controls="collapseExample">Agregar
-								Usuario</a> <br></br> <a class="btn btn-info anchoheaderhref"
-								href="/menu?content=usuarioMisUsuarios" role="button"
-								aria-expanded="false" aria-controls="collapseExample">Mis Usuarios </a> <br></br>
-						</div>
+					<a class="navbar-brand" href="/menu?content=pedidos">Pedidos</a>
+					<a class="navbar-brand" href="/menu?content=usuarios">Usuarios</a>
+					<a class="navbar-brand" href="/menu?content=precios">Precios</a>
+					<a class="navbar-brand" href="/menu?content=nosotros">Nosotros</a>
 					</div>
 
+			
 
-					<div class="btn-group">
-						<button type="button"
-							class="anchobotonmenu btn btn-info dropdown-toggle  btn-outline-primary"
-							data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							Clientes</button>
-						<div class="dropdown-menu">
-							<a class="btn btn-info anchoheaderhref"
-								href="/menu?content=clienteAgregar" role="button"
-								aria-expanded="false" aria-controls="collapseExample">Agregar
-								Cliente </a> <br></br> <a class="btn btn-info anchoheaderhref"
-								href="/menu?content=clienteMisClientes" role="button"
-								aria-expanded="false" aria-controls="collapseExample">Mis Clientes</a> <br></br>
-						</div>
-					</div>
-
-					<div class="btn-group">
-						<button type="button"
-							class="anchobotonmenu btn btn-info dropdown-toggle  btn-outline-primary"
-							data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							Horario</button>
-						<div class="dropdown-menu">
-							<a class="btn btn-info anchoheaderhref"
-								href="/menu?content=horarioAgregar" role="button"
-								aria-expanded="false" aria-controls="collapseExample">Horarios </a> <br></br> 
-						</div>
-					</div>
-
-					<div class="btn-group">
-						<button type="button"
-							class="anchobotonmenu btn btn-info dropdown-toggle  btn-outline-primary"
-							data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							Cita</button>
-						<div class="dropdown-menu">
-							<a class="btn btn-info anchoheaderhref"
-								href="/menu?content=citaAgregar" role="button"
-								aria-expanded="false" aria-controls="collapseExample">Control de Citas </a> <br></br> 
-						</div>
-					</div>
 
 
 					
@@ -117,15 +83,17 @@
 
 
 				</form>
-			</div>
+			
 
 		</div>
 	</nav>
+	<div th:replace="fragment/header :: header" />
+
 
 
 
 	<div class="fondoMenu">
-		<div class="botonesMenu"><p th:text="${'EMPRESA: '+user.nombreEmpresaActual+' - USUARIO: '+user.email+'  - PERFIL: '+user.nivel}">Perfil</p>
+		<div class="botonesMenu"><p th:text="${'USUARIO: '+user.correo+'  - PERFIL: '+user.grupo}">Perfil</p>
 		
 		</div>
 

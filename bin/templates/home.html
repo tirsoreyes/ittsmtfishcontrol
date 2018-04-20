@@ -4,68 +4,210 @@
 	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
 
 <head>
-    <title>CitaT</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> </meta>
-    <!-- Bootstrap -->
-    <link href="webjars/library/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen"> </link>
-    
-   <link rel="icon" href="webjars/img/iconocitat.png"/>
-    
+<title>Fish Control</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</meta>
+<!-- Bootstrap -->
+
+<link href="webjars/library/bootstrap-4.1.0/css/bootstrap.min.css"
+	rel="stylesheet" media="screen">
+</link>
+<link href="webjars/css/home.css"
+	rel="stylesheet" media="screen">
+</link>
+
+<link rel="icon" href="webjars/img/Application.png" />
+
 </head>
 <body>
 
-	<nav class="navbar navbar-inverse navbar-fixed-top">
+	<nav class="navbar navbar-light justify-content-between"
+		style="background-color: #e3f2fd;">
 		<div class="container">
 			<div class="navbar-header">
-				<button type="button" class="navbar-toggle collapsed"
-					data-toggle="collapse" data-target="#navbar" aria-expanded="false"
-					aria-controls="navbar">
-					<span class="sr-only">Toggle navigation</span> <span
-						class="icon-bar"></span> <span class="icon-bar"></span> <span
-						class="icon-bar"></span>
-				</button>
+			
 				<a class="navbar-brand" href="#"> <img
-					src="webjars/img/citatesquina.png"/></a>
-			
-			</div>
-			
-			
-			
-			
-				
-			<div id="navbar" class="navbar-collapse collapse">
+					src="webjars/img/Application.png" /></a>
 
-				<form id="login-form" class="navbar-form navbar-right">
+			</div>
+
+				<form id="login-form" class="form-inline">
 
 					<div class="form-group">
 						<input type="text" id="txtUsuarioLogin" name="username"
-							placeholder="Correo Electrónico" class="form-control" th:required="required"/>
+							placeholder="Correo Electrónico" class="form-control"
+							th:required="required" />
 					</div>
 					<div class="form-group">
-						<input type="password" id="txtContrasenaLogin"
-							name="password" placeholder="Contraseña"
-							class="form-control" th:required="required"/>
-					
+						<input type="password" id="txtContrasenaLogin" name="password"
+							placeholder="Contraseña" class="form-control"
+							th:required="required" />
+
 					</div>
 					<button type="submit" id="btnIngresar" class="btn btn-info">Ingresar</button>
-					<a href="#conocenos" class="scroll"><font color="white">  <strong>  Conócenos</strong></font></a>
-					
-					
-				
-				
-
 					
 				</form>
-			</div>
-			<!--/.navbar-collapse -->
 		</div>
 	</nav>
-	
 
 
 
 
-<div th:replace="fragment/footer :: footer"/>    
+	<div class="container">
+		<div class="row homestyle">
+		
+			<div class="col-md-8">
+				<div class="text-center">
+					<h2>
+						<strong> ¡Bienvenido! </strong>
+					</h2>
+				</div>
+				<h4>
+					<strong>En el invernadero de Mojarra </strong> 
+					estamos comprometidos con usted, somos una empresa de crianza de mojarra tilapia, estamos a sus órdenes por los siguientes medios:.
+				</h4>
+
+
+
+				<br></br>
+				<div class="text-left">
+					<h3>Pedidos en línea</h3>
+					<div class="text-left">
+						<p>Para hacer sus pedidos en línea, es necesario que llene nuestro formulario de registro, con ello obtendra credenciales de acceso para poder realizar sus pedidos.</p>
+					</div>
+				</div>
+
+				<br></br>
+
+				<div class="text-left">
+					<h3>Pedidos por telefóno</h3>
+					<div class="text-left">
+						<p>Para su comodidad le proporcionamos los datos de contacto telefónico. <br></br>tel: 559900990033</p>
+					</div>
+
+				</div>
+				
+
+
+				<br></br>
+
+				<div class="text-left">
+					<h3>Por correo electrónico</h3>
+					<div class="text-left">
+						<p>Si usted lo prefiere puede enviarnos un correo a micorreo@mojarra.com, donde podrá agregar sus datos y nosotros lo contactaremos.</p>
+					</div>
+
+				</div>
+				<div class="text-left">
+					<h3>Compra directa en domicilio</h3>
+					<div class="text-left">
+						<p>Si lo prefiere nos puede visitar en llallala chcallala lloloolll , en horario chalala</p>
+					</div>
+
+				</div>
+					<table class="table table-responsive-md">
+
+			<!--Table head-->
+			<h4>Nuestros precios:</h4>
+			<thead class="cyan lighten-3">
+			
+				<tr>
+					<th class="th-lg">#</th>
+					<th class="th-lg">de</th>
+					<th class="th-lg">A</th>
+					<th class="th-lg">precio</th>
+					
+				</tr>
+			</thead>
+			<!--Table head-->
+
+			<!--Table body-->
+			<tbody>
+			    <tr th:each="precio: ${precios}">
+      				<td th:text="${precio.id}">#</td>
+      				<td th:text="${precio.de}">Nombre</td>
+      				<td th:text="${precio.a}">Correo</td>
+      				<td th:text="${precio.precio}">Nivel</td>
+      				
+      				
+    			</tr>
+			</tbody>
+			<!--Table body-->
+
+		</table>
+
+
+			</div>
+			
+				<div class="col-md-3">
+					<div class="text-center">
+						<h3>
+							<strong>Regístrate Gratis </strong>
+						</h3>
+
+						<div class="text-left">
+						
+						
+					
+						
+							<div class="form-group">
+								<label for="nombre"><strong>Nombre:</strong></label> <input
+									type="text" class="form-control"
+									name="nombre" placeholder="Nombre" />
+							</div>
+							
+								<div class="form-group">
+								<label for="apellidos"><strong>Apellidos:</strong></label> <input
+									type="text" class="form-control" 
+									name="apellidos" placeholder="Apellidos" />
+							</div>
+							
+							<div class="form-group">
+								<label for="email"><strong>Email:</strong></label> <input
+									type="email" name="email" class="form-control"
+									 placeholder="Correo Electrónico" />
+							</div>
+													
+							<div class="form-group">
+								<label for="telefono"><strong>Teléfono:</strong></label> <input
+									type="text" class="form-control" 
+									name="telefono" placeholder="Teléfono" />
+							</div>
+
+						</div>
+						<div class="row">
+							<div class="text-Left">
+								<font size="1"> Al hacer clic en "Regístrate", aceptas y
+									confirmas que leiste nuestras <a href="#" data-toggle="modal"
+									data-target="#privacidad">Condiciones y Aviso de Privacidad</a><strong>
+								</strong>, incluido el uso de cookies.
+								</font>
+
+
+
+							</div>
+						</div>
+
+						<div class="margin-rigth">
+							<a name="conocenos" id="conocenos"></a>
+							<button type="submit" id="btnRegistro" class="btn btn-info">
+								<span class="glyphicon glyphicon-ok"></span> Regístrate
+							</button>
+						</div>
+
+					</div>
+
+				</div>
+			
+		
+		</div>
+	</div>
+
+
+
+
+	<div th:replace="fragment/footer :: footer" />
+
 </body>
 
 

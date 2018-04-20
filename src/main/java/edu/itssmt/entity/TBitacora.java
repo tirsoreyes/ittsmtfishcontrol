@@ -2,7 +2,6 @@ package edu.itssmt.entity;
 
 import java.io.Serializable;
 import javax.persistence.*;
-import java.util.Date;
 
 
 /**
@@ -17,56 +16,52 @@ public class TBitacora implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int id;
+	private int idBitacora;
 
-	private String evento;
+	private String accion;
 
-	@Temporal(TemporalType.TIMESTAMP)
-	private Date fecha;
+	private String fecha;
 
-	//bi-directional many-to-one association to TCita
-	@ManyToOne
-	@JoinColumn(name="T_CITA_Id")
-	private TCita TCita;
+	private String nivel;
 
 	//bi-directional many-to-one association to TUsuario
 	@ManyToOne
-	@JoinColumn(name="T_USUARIO_Id")
+	@JoinColumn(name="t_usuario_idUsuario")
 	private TUsuario TUsuario;
 
 	public TBitacora() {
 	}
 
-	public int getId() {
-		return this.id;
+	public int getIdBitacora() {
+		return this.idBitacora;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public void setIdBitacora(int idBitacora) {
+		this.idBitacora = idBitacora;
 	}
 
-	public String getEvento() {
-		return this.evento;
+	public String getAccion() {
+		return this.accion;
 	}
 
-	public void setEvento(String evento) {
-		this.evento = evento;
+	public void setAccion(String accion) {
+		this.accion = accion;
 	}
 
-	public Date getFecha() {
+	public String getFecha() {
 		return this.fecha;
 	}
 
-	public void setFecha(Date fecha) {
+	public void setFecha(String fecha) {
 		this.fecha = fecha;
 	}
 
-	public TCita getTCita() {
-		return this.TCita;
+	public String getNivel() {
+		return this.nivel;
 	}
 
-	public void setTCita(TCita TCita) {
-		this.TCita = TCita;
+	public void setNivel(String nivel) {
+		this.nivel = nivel;
 	}
 
 	public TUsuario getTUsuario() {

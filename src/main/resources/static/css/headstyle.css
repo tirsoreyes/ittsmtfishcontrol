@@ -1,7 +1,3 @@
-body {
-	padding-top: 50px
-}
-
 .fondoMenu {
 	text-align: right;
 	background: #50B3E8;
@@ -27,4 +23,8 @@ body {
 	
 	width:130px;
 	height:30;
+}
+
+.topMenu{
+	padding: 50px;
 }
